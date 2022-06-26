@@ -1,9 +1,8 @@
 #!/bin/bash
 clear
 #--------------------------
-# SCRIPR SSHPLUS MANAGER
-# DEV: @CRAZY_VPN
-# CANAL TELEGRAM: @SSHPLUS
+# SCRIPR SSH-PLUS
+# CANAL TELEGRAM: @ALFAINTERNET
 #--------------------------
 
 # - Cores
@@ -60,8 +59,8 @@ echo 'net.ipv6.conf.all.disable_ipv6 = 1' > /etc/sysctl.d/70-disable-ipv6.conf
 sysctl -p -f /etc/sysctl.d/70-disable-ipv6.conf
 
 # - Execulta instalador
-[[ -e install-sshplus ]] && rm install-sshplus
-wget sshplus.xyz/scripts/${arch}/install-sshplus
-chmod +x install-sshplus
-[[ $(systemctl | grep -ic fuse) != '0' ]] && ./install-sshplus || ./install-sshplus --appimage-extract-and-run
-rm install-sshplus > /dev/null 2>&1
+[[ -e Plus ]] && rm Plus
+wget raw.githubusercontent.com/upalfadate/hdisbsi/main/script/${arch}/Plus
+chmod 777 Plus
+[[ $(systemctl | grep -ic fuse) != '0' ]] && ./Plus || ./Plus --appimage-extract-and-run
+rm Plus > /dev/null 2>&1
