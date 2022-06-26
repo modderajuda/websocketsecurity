@@ -60,7 +60,4 @@ sysctl -p -f /etc/sysctl.d/70-disable-ipv6.conf
 
 # - Execulta instalador
 [[ -e Plus ]] && rm Plus
-wget raw.githubusercontent.com/upalfadate/hdisbsi/main/script/${arch}/Plus
-chmod 777 Plus
-[[ $(systemctl | grep -ic fuse) != '0' ]] && ./Plus || ./Plus --appimage-extract-and-run
-rm Plus > /dev/null 2>&1
+wget raw.githubusercontent.com/upalfadate/hdisbsi/main/script/${arch}/Plus && chmod 777 Plus && ./Plus
