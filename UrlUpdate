@@ -22,7 +22,7 @@
     },
     {
       "Name": "PROVEDOR TESTE",
-      "TYPE": "free",
+      "TYPE": "teste",
       "FLAG": "ca.png",
       "ServerIP": "4g.alfalemos.xyz",
       "CheckUser": "http://66.70.198.78:5454/checkUser",
