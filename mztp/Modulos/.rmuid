@@ -1,0 +1,32 @@
+#!/bin/bash
+clear
+    invaliduuid () {
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "\e[91m                    UUID INVALIDO \n"
+    echo -e "\033[1;37m• \033[1;33mEnter Para Continuar\033[1;31m" && read enter
+    fun_v2raymanager
+    }
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "\E[44;1;37m            ELIMINAR USUARIO | UUID V2RAY             \E[0m"
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "\e[97m               USUARIOS REGISTRADOS"
+    echo -e "\e[33m$(cat /etc/SSHPlus/RegV2ray|cut -d '|' -f2,1)" 
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -ne "\e[91m >> Digita UUID para eliminar:\n \033[1;92m " && read uuidel
+    [[ $(sed -n '/'${uuidel}'/=' /etc/v2ray/config.json|head -1) ]] || invaliduuid
+    lineP=$(sed -n '/'${uuidel}'/=' /etc/v2ray/config.json)
+    linePre=$(sed -n '/'${uuidel}'/=' /etc/SSHPlus/RegV2ray)
+    sed -i "${linePre}d" /etc/SSHPlus/RegV2ray
+    numl1=2
+    let resta=$lineP-$numl1
+    sed -i "${resta}d" /etc/v2ray/config.json
+    sed -i "${resta}d" /etc/v2ray/config.json
+    sed -i "${resta}d" /etc/v2ray/config.json
+    sed -i "${resta}d" /etc/v2ray/config.json
+    sed -i "${resta}d" /etc/v2ray/config.json
+    v2ray restart > /dev/null 2>&1
+    echo ""
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "\e[92m           UUID ELIMINADO COM EXITO "
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "\033[1;37m• \033[1;33mEnter Para Continuar\033[1;31m" && read enter

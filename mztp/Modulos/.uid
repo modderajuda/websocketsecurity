@@ -1,0 +1,60 @@
+#!/bin/bash
+clear
+    echo -e "\E[44;1;37m            ADICIONAR USUÁRIO V2RAY             \E[0m"
+    ##DIAS
+    valid=$(date '+%C%y-%m-%d' -d " +31 days")		  
+    ##CORREO		  
+    MAILITO=$(cat /dev/urandom | tr -dc '[:alnum:]' | head -c 10)
+    ##ADDUSERV2RAY		  
+    UUID=`uuidgen`	  
+    sed -i '13i\           \{' /etc/v2ray/config.json
+    sed -i '14i\           \"alterId": 0,' /etc/v2ray/config.json
+    sed -i '15i\           \"id": "'$UUID'",' /etc/v2ray/config.json
+    sed -i '16i\           \"email": "'$MAILITO'@gmail.com"' /etc/v2ray/config.json
+    sed -i '17i\           \},' /etc/v2ray/config.json
+    echo ""
+    while true; do
+    echo -ne "\e[91mNOME DO USUÁRIO:\033[1;92m"
+         read -p " " nick
+         nick="$(echo $nick|sed -e 's/[^a-z0-9 -]//ig')"
+         if [[ -z $nick ]]; then
+         echo -e "$msg17" && continue
+         elif [[ "${#nick}" -lt "2" ]]; then
+         echo -e "$msg02" && continue
+         elif [[ "${#nick}" -gt "20" ]]; then
+         echo -e "$msg03" && continue
+         fi
+         break
+    done
+    echo -e "\e[91mID DO USUÁRIO: \e[92m$UUID "
+    while true; do
+         echo -ne "\e[91mDURAÇÃO DO USUÁRIO (DIAS):\033[1;92m " && read diasuser
+         if [[ -z "$diasuser" ]]; then
+         echo -e "$msg17" && continue
+         elif [[ "$diasuser" != +([0-9]) ]]; then
+         echo -e "$msg08" && continue
+         elif [[ "$diasuser" -gt "360" ]]; then
+         echo -e "$msg09" && continue
+         fi 
+         break
+    done
+    #Lim
+    [[ $(cat /etc/passwd |grep $1: |grep -vi [a-z]$1 |grep -v [0-9]$1 > /dev/null) ]] && return 1
+    valid=$(date '+%C%y-%m-%d' -d " +$diasuser days") && datexp=$(date "+%F" -d " + $diasuser days")
+    echo -e "\e[91mDATA DE VENCIMENTO: \e[92m$datexp "
+    ##Registro
+    echo "  $UUID | $nick | $valid " >> /etc/SSHPlus/RegV2ray
+    Fecha=`date +%d-%m-%y-%R`
+    cp /etc/SSHPlus/RegV2ray /etc/SSHPlus/v2ray/RegV2ray-"$Fecha"
+    v2ray restart > /dev/null 2>&1
+    echo ""
+    v2ray info > /etc/SSHPlus/v2ray/confuuid.log
+    lineP=$(sed -n '/'${UUID}'/=' /etc/SSHPlus/v2ray/confuuid.log)
+    numl1=4
+    let suma=$lineP+$numl1
+    sed -n ${suma}p /etc/SSHPlus/v2ray/confuuid.log 
+    echo ""
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "\e[92m           USUÁRIO ADICIONADO COM EXITO "
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "\033[1;37m• \033[1;33mEnter Para Continuar\033[1;31m" && read enter
