@@ -32,99 +32,13 @@
     chmod 777 badvpn.sh
     ./badvpn.sh
     echo "================================================"
-    ;;
-    3)
-    echo -e "\033[1;32mINICIANDO BADVPN PRO... \033[0m\n"
-      screen -dmS udpvpn /bin/badvpn-udpgw --listen-addr 127.0.0.1:7296 --max-clients 16384 --max-connections-for-client 16384 --client-socket-sndbuf 16384 --udp-mtu 9000
-      sleep 3
-      echo -e "\033[1;32mPORTA BADVPN PRO ATIVADO COM SUCESSO\033[1;33m"
-      sleep 4
-      echo "================================================"
-      ;;
-      4)
-      echo -e "\033[1;32mINICIANDO BADVPN PRO... \033[0m\n"
-      screen -dmS udpvpn /bin/badvpn-udpgw --listen-addr 127.0.0.1:7297 --max-clients 16384 --max-connections-for-client 16384 --client-socket-sndbuf 16384 --udp-mtu 9000
-      sleep 3
-      echo -e "\033[1;32mPORTA BADVPN PRO ATIVADO COM SUCESSO\033[1;33m"
-      sleep 4
-      echo "================================================"
-      ;;
-     5)
-     echo -e "\033[1;32mINICIANDO BADVPN PRO... \033[0m\n"
-     screen -dmS udpvpn /bin/badvpn-udpgw --listen-addr 127.0.0.1:7298 --max-clients 16384 --max-connections-for-client 16384 --client-socket-sndbuf 16384 --udp-mtu 9000
-     sleep 3
-     echo -e "\033[1;32mPORTA BADVPN PRO ATIVADO COM SUCESSO\033[1;33m"
-     sleep 4
-     echo "================================================"
-     ;;
-     6)
-     echo -e "\033[1;32mINICIANDO BADVPN PRO... \033[0m\n"
-     screen -dmS udpvpn /bin/badvpn-udpgw --listen-addr 127.0.0.1:7299 --max-clients 16384 --max-connections-for-client 16384 --client-socket-sndbuf 16384 --udp-mtu 9000
-     sleep 3
-     echo -e "\033[1;32mPORTA BADVPN PRO ATIVADO COM SUCESSO\033[1;33m"
-     sleep 4
-     echo "================================================"
-     ;;
-     7)
-     echo -e "\033[1;32mINICIANDO BADVPN PRO... \033[0m\n"
-     screen -dmS udpvpn /bin/badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 16384 --max-connections-for-client 16384 --client-socket-sndbuf 16384 --udp-mtu 9000
-     sleep 3
-     echo -e "\033[1;32mPORTA BADVPN PRO ATIVADO COM SUCESSO\033[1;33m"
-     sleep 4
-     echo "================================================"
-     ;;
-     8)
-     echo -e "\033[1;32mINICIANDO BADVPN PRO... \033[0m\n"
-     screen -dmS udpvpn /bin/badvpn-udpgw --listen-addr 127.0.0.1:7400 --max-clients 16384 --max-connections-for-client 16384 --client-socket-sndbuf 16384 --udp-mtu 9000
-     sleep 3
-     echo -e "\033[1;32mPORTA BADVPN PRO ATIVADO COM SUCESSO\033[1;33m"
-     sleep 4
-     echo "================================================"
-     ;;
-     9)
-     echo -e "\033[1;32mINICIANDO BADVPN PRO... \033[0m\n"
-     screen -dmS udpvpn /bin/badvpn-udpgw --listen-addr 127.0.0.1:7500 --max-clients 16384 --max-connections-for-client 16384 --client-socket-sndbuf 16384 --udp-mtu 9000
-     sleep 3
-     echo -e "\033[1;32mPORTA BADVPN PRO ATIVADO COM SUCESSO\033[1;33m"
-     sleep 4
-     echo "================================================"
-     ;;
-    10)
-    echo -e "\033[1;32mINICIANDO TODAS AS PORTAS BADVPN PRO... \033[0m\n"
-    sleep 6
-    screen -dmS udpvpn /bin/badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 16384 --max-connections-for-client 16384 --client-socket-sndbuf 16384 --udp-mtu 9000
-    
-    screen -dmS udpvpn /bin/badvpn-udpgw --listen-addr 127.0.0.1:7295 --max-clients 16384 --max-connections-for-client 16384 --client-socket-sndbuf 16384 --udp-mtu 9000
-    
-    screen -dmS udpvpn /bin/badvpn-udpgw --listen-addr 127.0.0.1:7296 --max-clients 16384 --max-connections-for-client 16384 --client-socket-sndbuf 16384 --udp-mtu 9000
-    
-    screen -dmS udpvpn /bin/badvpn-udpgw --listen-addr 127.0.0.1:7297 --max-clients 16384 --max-connections-for-client 16384 --client-socket-sndbuf 16384 --udp-mtu 9000
-    
-    screen -dmS udpvpn /bin/badvpn-udpgw --listen-addr 127.0.0.1:7298 --max-clients 16384 --max-connections-for-client 16384 --client-socket-sndbuf 16384 --udp-mtu 9000
-    
-    screen -dmS udpvpn /bin/badvpn-udpgw --listen-addr 127.0.0.1:7299 --max-clients 16384 --max-connections-for-client 16384 --client-socket-sndbuf 16384 --udp-mtu 9000
-    
-    screen -dmS udpvpn /bin/badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 16384 --max-connections-for-client 16384 --client-socket-sndbuf 16384 --udp-mtu 9000
-    
-    screen -dmS udpvpn /bin/badvpn-udpgw --listen-addr 127.0.0.1:7400 --max-clients 16384 --max-connections-for-client 16384 --client-socket-sndbuf 16384 --udp-mtu 9000
-    
-    screen -dmS udpvpn /bin/badvpn-udpgw --listen-addr 127.0.0.1:7500 --max-clients 16384 --max-connections-for-client 16384 --client-socket-sndbuf 16384 --udp-mtu 9000
+    clear
     echo -e "\033[1;32mPORTA BADVPN PRO ATIVADO COM SUCESSO\033[1;33m"
     sleep 4
-    echo "================================================"
-    ;;
-    11)
-    badvpn
-    echo "================================================"
-    ;;
-    0)
     menu
-    echo "================================================"
-    ;;
-    *)
-    echo "Opção inválida!"
-esac
-done
-
+} || {
+    screen -r -S "bot_teste" -X quit
+    clear
+    echo "BOT DESATIVADO"
+    menu
 }
-menu
