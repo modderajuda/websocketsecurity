@@ -51,33 +51,25 @@
 			clear
 			echo -e "\033[1;33mPARA SAIR CLICK CTRL + C\033[1;36m"
 			sleep 5s
-			slurm -i eth0
-			clear
-			menu 
+			apt install slurm -y && slurm -i eth0
 			;;
 			10 | 10)
 			clear
 			echo -e "\033[1;33mPARA SAIR CLICK CTRL + C\033[1;36m"
 			sleep 5s
-			htop
-			clear
-			menu 
+			apt install htop -y && htop
 			;;
 			11 | 11)
 			clear
 			echo -e "\033[1;33mPARA SAIR CLICK CTRL + C\033[1;36m"
 			sleep 5s
-			glances
-			clear
-			menu 
+			apt install glances -y && glances
 			;;
 			12 | 12)
 			clear
 			echo -e "\033[1;33mPARA SAIR CLICK CTRL + C\033[1;36m"
 			sleep 5s
-			nethogs -v 3
-			clear
-			menu 
+			apt install nethogs -y && nethogs
 			;;
 			0 | 00)
 			clear
