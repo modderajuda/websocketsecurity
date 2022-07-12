@@ -55,6 +55,18 @@ SCOLOR='\033[0m'
 		done
 	}
 
+	slow_setup() {
+		[[ -e "/bin/slowdns" ]] && {
+			slowdns
+		} || {
+			cd $HOME
+			wget https://raw.githubusercontent.com/kiritosshxd/SSHPLUS/main/Slowdns/install -o /dev/null
+			chmod 777 install
+			./install
+		}
+
+	}
+
 	inst_sqd() {
 		if netstat -nltp | grep 'squid' 1>/dev/null 2>/dev/null; then
 			echo -e "\E[41;1;37m            REMOVER SQUID PROXY              \E[0m"
@@ -2050,7 +2062,7 @@ echo -e "\033[0;31m║\033[0m"
 			} || {
 				sts8="\033[1;31m○ "
 			}
-			[[ "$(ps x | grep 'slow_dns' | grep -v 'grep'|wc -l)" != '0' ]] && {
+			[[ "$(ps x | grep 'slowdns' | grep -v 'grep' | wc -l)" != '0' ]] && {
 				sts9="\033[1;32m◉ "
 			} || {
 				sts9="\033[1;31m○ "
@@ -2154,7 +2166,7 @@ echo -e "\033[01;31m║\033[0m"
 			fun_chisel
 			;;
 			9 | 09)
-			slowdns
+			slow_setup
 			;;
 			10 | 10)
 			v2raymanager
