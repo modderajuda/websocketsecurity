@@ -32,10 +32,10 @@ case "$x" in
 echo "================================================"
 ;;
     2)
-install dos2unix -y /dev/null
-wget https://raw.githubusercontent.com/BGXSJYRABJE/hdisbsi/main/badvpn/badvpn.sh /dev/null
-chmod 777 badvpn.sh
-./badvpn.sh
+    install dos2unix -y /dev/null
+    wget https://raw.githubusercontent.com/BGXSJYRABJE/hdisbsi/main/badvpn/badvpn.sh /dev/null
+    chmod 777 badvpn.sh
+    ./badvpn.sh
 echo "================================================"
 ;;
    3)
