@@ -283,7 +283,7 @@ case "$x" in
    botssh
    ;;
    27)
-   inst-botteste
+   botteste.sh
    ;;
    28)
    clear
