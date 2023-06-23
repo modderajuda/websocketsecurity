@@ -1658,13 +1658,7 @@ elif [[ "$resposta" = '3' ]]; then
 				verif_ptrs $msg
 				fun_iniwssocks() {
 					sleep 1
-					screen -dmS ws2 python /etc/SSHPlus/WebSocket $msg
-					[[ $(grep -wc "WebSocket" /etc/autostart) = '0' ]] && {
-						echo -e "netstat -tlpn | grep -w $msg > /dev/null || {  screen -r -S 'ws2' -X quit;  screen -dmS novoWS /etc/SSHPlus/WebSocket -proxy_port 0.0.0.0:80 -msg=$msg; }" >>/etc/autostart
-					} || {
-						sed -i '/WebSocket/d' /etc/autostart
-						echo -e "netstat -tlpn | grep -w $msg > /dev/null || {  screen -r -S 'ws2' -X quit;  screen -dmS novoWS /etc/SSHPlus/WebSocket -proxy_port 0.0.0.0:80 -msg=$msg; }" >>/etc/autostart
-					}
+					screen -dmS novoWS /etc/SSHPlus/WebSocket -proxy_port 0.0.0.0:80 -msg=Modder
 				}
 				echo ""
 				echo -e "\033[1;32mINICIANDO O WEBSOCKET\033[1;33m"
