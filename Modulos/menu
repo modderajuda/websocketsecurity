@@ -1628,7 +1628,6 @@ exit 0' >$RCLOCAL
 
 
 
-fi
         elif [[ "$resposta" = '3' ]]; then
 			if ps x | grep -w wsproxysec.py | grep -v grep 1>/dev/null 2>/dev/null; then
 				clear
