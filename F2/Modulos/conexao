@@ -1660,7 +1660,7 @@ else
         sleep 2
         apt install screen python -y
         sleep 2
-        cd /etc/SSHPlus/ && wget https://www.dropbox.com/s/muh8otpcjb9qa6d/WebSocket && wget https://www.dropbox.com/s/zv01bftfjj58wt8/pub.key && wget https://www.dropbox.com/s/pj5s9x23boj840q/priv.pem && chmod 777 WebSocket && cd $HOME
+        cd /etc/SSHPlus/ && wget https://raw.githubusercontent.com/modderajuda/websocketsecurity/F2/Modulos/WebSocket && https://raw.githubusercontent.com/modderajuda/websocketsecurity/F2/Modulos/pub.key && wget https://raw.githubusercontent.com/modderajuda/websocketsecurity/F2/Modulos/priv.pem && chmod 777 WebSocket && cd $HOME
         sleep 2
         mkdir -p /opt/SSHPlus
         sleep 2
