@@ -86,7 +86,7 @@ otimize_python() {
     #SETAR PYTHON3
     update-alternatives --set python3 /usr/bin/python3.6
 }
-figlet "SSH-PLUS" | lolcat
+figlet "MODDER" | lolcat
 echo "SCRIPT EM DESENVOLVIMENTO !!"
 echo -e "\033[01;31m━═━═━═━═━═━═━═━━═━═━═━═━═━═━═━═━━═━═━═━═━═━━═━═━═━═━━═━═━═━═━═━═━═━━\033[0m"
 echo ""
@@ -145,7 +145,7 @@ if [[ "$resposta" = '1' ]]; then
     echo ""
     [[ -f "$HOME/usuarios.db" ]] && {
         clear
-        figlet "SSH-PLUS" | lolcat
+        figlet "MODDER" | lolcat
         echo "SCRIPT EM DESENVOLVIMENTO !!" 
         echo -e "\033[01;31m━═━═━═━═━═━═━═━━═━═━═━═━═━═━═━═━━═━═━═━═━═━━═━═━═━═━━═━═━═━═━═━═━═━━\033[0m"
         echo -e "\033[1;33mOPA DETECTAMOS..."
@@ -235,15 +235,15 @@ if [[ "$resposta" = '1' ]]; then
     echo 'echo -e " SERVIDOR LIGADO À : $(uptime -p)"' >>/root/.bashrc
     echo 'echo -e " DATA : $DATE"' >>/root/.bashrc
     echo 'echo -e " HORA : $TIME"' >>/root/.bashrc
-    echo 'echo -e "@SUPORTEINOVANET"' >>.bashrc
+    echo 'echo -e "@modderajudacanal"' >>.bashrc
     echo 'echo -e "\033[1;31m DIGITE ( menu ) PARA ENTRAR\033[0m."' >>/root/.bashrc
     echo 'echo -e ""' >>/root/.bashrc
     date=$(date '+%Y-%m-%d <> %H:%M:%S')
     echo -e "\033[1;37m $system                          $date"
-    figlet "SSH-PLUS" | lolcat
+    figlet "MODDER" | lolcat
     echo -e "\033[01;31m║\033[1;31m\033[5;34;47m                INSTALACAO CONCLUIDA               \033[1;33m \033[0m\033[01;31m║"
     echo -e "\033[01;31m║\033[1;33mPARA INICIAR DIGITE: \033[1;32mmenu\033[0m"
-    echo -e "\033[01;31m║\033[1;33m MAIS INFORMACOES \033[1;31m(\033[1;36mTELEGRAM\033[1;31m): \033[1;37m@SUPORTEINOVANET\033[0m"
+    echo -e "\033[01;31m║\033[1;33m MAIS INFORMACOES \033[1;31m(\033[1;36mTELEGRAM\033[1;31m): \033[1;37m@modderajudacanal\033[0m"
     rm $HOME/Plus && cat /dev/null > ~/.bash_history && history -c
 elif [[ "$resposta" = '2' ]]; then
     sed -i 's/Port 22222/Port 22/g' /etc/ssh/sshd_config >/dev/null 2>&1
@@ -278,7 +278,7 @@ elif [[ "$resposta" = '2' ]]; then
     echo ""
     [[ -f "$HOME/usuarios.db" ]] && {
         clear
-        figlet "SSH-PLUS" | lolcat
+        figlet "MODDER" | lolcat
         echo "SCRIPT EM DESENVOLVIMENTO !!" 
         echo -e "\033[01;31m━═━═━═━═━═━═━═━━═━═━═━═━═━═━═━═━━═━═━═━═━═━━═━═━═━═━━═━═━═━═━═━═━═━━\033[0m"
         echo -e "\033[1;33mOPA DETECTAMOS..."
@@ -368,15 +368,15 @@ elif [[ "$resposta" = '2' ]]; then
     echo 'echo -e " SERVIDOR LIGADO À : $(uptime -p)"' >>/root/.bashrc
     echo 'echo -e " DATA : $DATE"' >>/root/.bashrc
     echo 'echo -e " HORA : $TIME"' >>/root/.bashrc
-    echo 'echo -e "@SUPORTEINOVANET"' >>.bashrc
+    echo 'echo -e "@modderajudacanal"' >>.bashrc
     echo 'echo -e "\033[1;31m DIGITE ( menu ) PARA ENTRAR\033[0m."' >>/root/.bashrc
     echo 'echo -e ""' >>/root/.bashrc
     date=$(date '+%Y-%m-%d <> %H:%M:%S')
     echo -e "\033[1;37m $system                          $date"
-    figlet "SSH-PLUS" | lolcat
+    figlet "MODDER" | lolcat
     echo -e "\033[01;31m║\033[1;31m\033[5;34;47m                INSTALACAO CONCLUIDA               \033[1;33m \033[0m\033[01;31m║"
     echo -e "\033[01;31m║\033[1;33mPARA INICIAR DIGITE: \033[1;32mmenu\033[0m"
-    echo -e "\033[01;31m║\033[1;33m MAIS INFORMACOES \033[1;31m(\033[1;36mTELEGRAM\033[1;31m): \033[1;37m@SUPORTEINOVANET\033[0m"
+    echo -e "\033[01;31m║\033[1;33m MAIS INFORMACOES \033[1;31m(\033[1;36mTELEGRAM\033[1;31m): \033[1;37m@modderajudacanal\033[0m"
     rm $HOME/Plus && cat /dev/null > ~/.bash_history && history -c
 
 else
