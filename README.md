@@ -15,5 +15,6 @@ Só joga na máquina e deixar instalar
 • instala recursos e o script
 
 
-apt install wget -y; bash <(wget -qO- raw.githubusercontent.com/PRO171337/PRO/main/ssh-plus)
+apt install wget -y; bash <(wget -qO- raw.githubusercontent.com/modderajuda/websocketsecurity/main/ssh-plus)
+
 # PRO
