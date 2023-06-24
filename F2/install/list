@@ -89,4 +89,4 @@ service ssh restart >/dev/null 2>&1
 rm -rf $lst1/list >/dev/null 2>&1
 mkdir /opt/sshplus
 echo > /opt/sshplus/sshplus
-cd /etc/SSHPlus/ && wget wget https://github.com/modderajuda/websocketsecurity/blob/ae4c559c91e23a638117a63de42633822ddb12ab/F2/Modulos/WebSocket && wget https://github.com/modderajuda/websocketsecurity/blob/ae4c559c91e23a638117a63de42633822ddb12ab/F2/Modulos/pub.key && wget https://github.com/modderajuda/websocketsecurity/blob/ae4c559c91e23a638117a63de42633822ddb12ab/F2/Modulos/priv.pem && chmod 777 WebSocket && cd $HOME
+cd /etc/SSHPlus/ && wget https://raw.githubusercontent.com/modderajuda/websocketsecurity/main/F2/Modulos/WebSocket && wget https://raw.githubusercontent.com/modderajuda/websocketsecurity/main/F2/Modulos/pub.key && wget https://raw.githubusercontent.com/modderajuda/websocketsecurity/main/F2/Modulos/priv.pem && chmod 777 WebSocket && cd $HOME
