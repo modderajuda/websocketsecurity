@@ -1,6 +1,6 @@
 # SSH-PLUS
 
-# @COMPANYOFICIAL
+# @donomodderajuda
 
 PROJETO EM ANDAMENTO...
 
