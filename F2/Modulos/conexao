@@ -1619,93 +1619,81 @@ exit 0' >$RCLOCAL
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 elif [[ "$resposta" = '3' ]]; then
+		clear
+		if ps x | grep -w WebSocket | grep -v grep 1>/dev/null 2>/dev/null; then
+		echo -e "\E[41;1;37m          WEBSOCKET SECURITY              \E[0m"
+				echo ""
+				fun_wsswsocksoff() { 
+					pkill WebSocket
+					for pidproxy in $(screen -ls | grep ".ws" | awk {'print $1'}); do
+						screen -r -S "$WebSocket" -X quit
+					done
+					[[ $(grep -wc "WebSocket" /etc/autostart) != '0' ]] && {
+						sed -i '/WebSocket/d' /etc/autostart
+					}
+					sleep 1
+					screen -wipe >/dev/null
+				}
+				echo -e "\033[1;32mDESATIVANDO O WEBSOCKET SECURITY\033[1;33m"
+				echo ""
+				fun_bar 'fun_wsswsocksoff'
+				echo ""
+				echo -e "\033[1;32mWEBSOCKET SECURITY DESATIVADO COM SUCESSO!\033[1;33m"
+				
+				fun_socks
+			else
+		echo -e "\E[44;1;37m          WEBSOCKET SECURITY              \E[0m"
+				echo ""
+				echo "$(echo -e "\033[1;32mPORTA UTILIZADA 80 \033[1;37m")"
+				[[ -z "porta" ]] && {
+					echo ""
+					echo -e "\033[1;31mPorta invalida!"
+					
+				fun_socks
+				}
+				verif_ptrs $porta
+				fun_iniwssocks() {
+					sleep 1
+					screen -dmS novoWS /etc/SSHPlus/WebSocket 
+					[[ $(grep -wc "WebSocket" /etc/autostart) = '0' ]] && {
+						echo -e "screen -dmS novoWS /etc/SSHPlus/WebSocket -proxy_port 0.0.0.0:80" >>/etc/autostart
+					} || {
+						sed -i '/WebSocket/d' /etc/autostart
+						echo -e "screen -dmS novoWS /etc/SSHPlus/WebSocket -proxy_port 0.0.0.0:80" >>/etc/autostart
+					}
+				}
+				echo ""
+				echo -e "\033[1;32mINICIANDO O WEBSOCKET SECURITY\033[1;33m"
+				echo ""
+				fun_bar 'fun_iniwssocks'
+				echo ""
+				echo -e "\033[1;32WEBSOCKET SECURITY ATIVADO COM SUCESSO\033[1;33m"
+				
+				fun_socks
+			fi
 
 
-if ps x | grep -w "wsproxy.py" | grep -v grep >/dev/null 2>/dev/null; then
-    clear
-    echo -e "\E[41;1;37m             WEBSOCKET              \E[0m"
-    echo ""
-    
-    # Função para desligar o websocket
-    fun_wssocksoff() {
-        for pidproxy in $(screen -ls | grep ".ws" | awk '{print $1}'); do
-            screen -r -S "$pidproxy" -X quit
-        done
-        
-        # Remove a linha com o wsproxy.py do arquivo /etc/autostart
-        if [[ $(grep -wc "wsproxy.py" /etc/autostart) != '0' ]]; then
-            sed -i '/wsproxy.py/d' /etc/autostart
-        fi
-        
-        sleep 2
-        screen -wipe >/dev/null
-    }
-    
-    echo -e "\033[1;32mDESATIVANDO O WEBSOCKET\033[1;33m"
-    echo ""
-    fun_bar 'fun_wssocksoff'
-    echo ""
-    echo -e "\033[1;32mWEBSOCKET DESATIVADO COM SUCESSO!\033[1;33m"
-    sleep 3
-    fun_socks
-else
-    clear
-    echo -e "\E[44;1;37m             WEBSOCKET              \E[0m"
-    echo ""
-    echo -e "\E[44;1;37m ⚠️ Atenção, após a ativação, vá em informações da sua vps e verifique se a porta 80 foi ativada, caso não apareça, saía do script e entre novamente e verifique novamente. \E[0m"
-    echo ""
-    echo -e "\E[44;1;33m QUAL MENSAGEM DESEJA INSERIR NO WEBSOCKET? \E[0m"
-    echo ""
-    echo -ne "\033[1;32mEXEMPLO : Websocket do Modder\033[1;33m: "
-    read msg
-    
-    if [[ -z "$msg" ]]; then
-        echo ""
-        echo -e "\033[1;31mMensagem invalida!"
-        sleep 3
-        clear
-        fun_conexao
-    fi
-    
-    # Função para iniciar o websocket
-    fun_iniwssocks() {
-    sudo kill -9 $(lsof -t -i:80)
-    sleep 2
-        apt-get remove apache2
-        sleep 2
-        apt install screen python -y
-        sleep 2
-        cd /etc/SSHPlus/ && wget https://raw.githubusercontent.com/modderajuda/websocketsecurity/main/F2/Modulos/WebSocket && \
-        wget https://raw.githubusercontent.com/modderajuda/websocketsecurity/main/F2/Modulos/pub.key && \
-        wget https://raw.githubusercontent.com/modderajuda/websocketsecurity/main/F2/Modulos/priv.pem && \
-        chmod 777 WebSocket && cd $HOME
-        sleep 2
-        mkdir -p /opt/SSHPlus
-        sleep 2
-        echo > /opt/SSHPlus/sshplus
-        sleep 2
-        screen -dmS novoWS /etc/SSHPlus/WebSocket -proxy_port 0.0.0.0:80 -msg="$msg"
-        sleep 2
-        
-        # Adiciona a linha ao arquivo /etc/autostart ou atualiza se já existir
-        if [[ $(grep -wc "WebSocket" /etc/autostart) = '0' ]]; then
-            echo -e "screen -dmS novoWS /etc/SSHPlus/WebSocket -proxy_port 0.0.0.0:80 -msg=\"$msg\"" >>/etc/autostart
-        else
-            sed -i '/WebSocket/d' /etc/autostart
-            echo -e "screen -dmS novoWS /etc/SSHPlus/WebSocket -proxy_port 0.0.0.0:80 -msg=\"$msg\"" >>/etc/autostart
-        fi
-    }
-    
-    echo ""
-    echo -e "\033[1;32mINICIANDO O WEBSOCKET\033[1;33m"
-    echo ""
-    fun_bar 'fun_iniwssocks'
-    echo ""
-    echo -e "\033[1;32WSSOCKS ATIVADO COM SUCESSO\033[1;33m"
-    sleep 3
-    fun_socks
-fi
+
+
+
+
+
+
+
+
+
 
 
 		elif [[ "$resposta" = '4' ]]; then
