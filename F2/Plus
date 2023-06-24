@@ -230,7 +230,7 @@ if [[ "$resposta" = '1' ]]; then
     echo "clear" >>/root/.bashrc
     echo 'DATE=$(date +"%d-%m-%y")' >>/root/.bashrc
     echo 'TIME=$(date +"%T")' >>/root/.bashrc
-    echo 'figlet -k SSH-PLUS | lolcat' >>/root/.bashrc
+    echo 'figlet -k MODDER | lolcat' >>/root/.bashrc
     echo 'echo -e " NOME DO SERVIDOR : $HOSTNAME"' >>/root/.bashrc
     echo 'echo -e " SERVIDOR LIGADO À : $(uptime -p)"' >>/root/.bashrc
     echo 'echo -e " DATA : $DATE"' >>/root/.bashrc
@@ -363,7 +363,7 @@ elif [[ "$resposta" = '2' ]]; then
     echo "clear" >>/root/.bashrc
     echo 'DATE=$(date +"%d-%m-%y")' >>/root/.bashrc
     echo 'TIME=$(date +"%T")' >>/root/.bashrc
-    echo 'figlet -k SSH-PLUS | lolcat' >>/root/.bashrc
+    echo 'figlet -k MODDER | lolcat' >>/root/.bashrc
     echo 'echo -e " NOME DO SERVIDOR : $HOSTNAME"' >>/root/.bashrc
     echo 'echo -e " SERVIDOR LIGADO À : $(uptime -p)"' >>/root/.bashrc
     echo 'echo -e " DATA : $DATE"' >>/root/.bashrc
