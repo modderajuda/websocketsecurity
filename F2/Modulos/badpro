@@ -107,7 +107,7 @@ fun_badvpn() {
         echo ""
         echo -e "\033[1;31mRetornando...\033[0m"
         sleep 1
-        badpro1
+        menu
     else
         echo ""
         echo -e "\033[1;31mOpcao invalida !\033[0m"
