@@ -1,8 +1,8 @@
 #!/bin/bash
 #====================================================
 #	SCRIPT: BOTSSH SSHPLUS MANAGER
-#	DESENVOLVIDO POR:	Noobs
-#	CANAL TELEGRAM:	http://t.me/
+#	DESENVOLVIDO POR:	@donomodderajuda
+#	CANAL TELEGRAM:	http://t.me/modderajudacanal
 #====================================================
 clear
 fun_bar() {
