@@ -10,16 +10,16 @@
       "protocol": "vless",
       "settings": {
         "clients": [
+           {
+           "alterId": 0,
+           "id": "1fd718ad-a312-489f-bf4d-43b38735184d",
+           "email": "GNrvrYjWQr@gmail.com"
+           },
           {
-            "alterId": 0,
-            "id": "8a872771-02fe-42b5-9bc4-c6ca74d35986",
-            "email": "rPMm0Tmelj@gmail.com"
-          },
-          {
-            "id": "1e11a65b-b2e0-4be9-a2ee-156d77f49f85",
-            "alterId": 0
+            "id": "8e2cc5fd-b8d5-4c13-a8c7-72808baf2a08"
           }
-        ]
+        ],
+        "decryption": "none"
       },
       "streamSettings": {
         "network": "ws",
