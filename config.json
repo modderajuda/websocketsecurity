@@ -38,7 +38,7 @@
         "wsSettings": {
           "path": "/",
           "headers": {
-            "Host": "v3modder.cclaro.com.br"
+            "Host": "v2modder.cclaro.com.br"
           }
         },
         "quicSettings": {}
