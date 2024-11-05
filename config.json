@@ -6,12 +6,17 @@
   },
   "inbounds": [
     {
-      "port": 2087,
+      "port": 2096,
       "protocol": "vless",
       "settings": {
         "clients": [
+           {
+           "alterId": 0,
+           "id": "c14ac5ed-5b16-4f73-8e94-530247c8388e",
+           "email": "aw1ce6Mrtm@gmail.com"
+           },
           {
-            "id": "de66c705-80e4-4d21-91ec-cbd4bbc19351"
+            "id": "e2e61073-30da-44de-a0f1-cae3e1da5dfe"
           }
         ],
         "decryption": "none"
@@ -22,8 +27,8 @@
         "tlsSettings": {
           "certificates": [
             {
-              "certificateFile": "/root/.acme.sh/flashnet.cclaro.com.br_ecc/fullchain.cer",
-              "keyFile": "/root/.acme.sh/flashnet.cclaro.com.br_ecc/flashnet.cclaro.com.br.key"
+              "certificateFile": "/root/.acme.sh/v2modder.cclaro.com.br_ecc/fullchain.cer",
+              "keyFile": "/root/.acme.sh/v2modder.cclaro.com.br_ecc/v2modder.cclaro.com.br.key"
             }
           ]
         },
@@ -38,7 +43,7 @@
         },
         "quicSettings": {}
       },
-      "domain": "flashnet.cclaro.com.br"
+      "domain": "v2modder.cclaro.com.br"
     }
   ],
   "outbounds": [
